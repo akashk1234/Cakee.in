@@ -130,13 +130,16 @@
 								Shape – Round <br>
 								
 								Serves – 4-6 people (0.5kg)</p>
-        					<h5>Price :<span>₹329</span></h5>
+								Free Home Delivery*
+								<h5 style="color: gray;"> Price : <del>₹499</del><span style="color: black;"> ₹399 </span> (20% off)</h5>
         					
 							
 							<div class="quantity_box">
         						<p>Please Note: <br> This image is only for representation purpose <br> This cake is hand delivered in a good quality cardboard box</p>
         					</div>
+							<center>
         					<a class="pink_more" href="#order-now">Order Now</a>
+						    </center>
         				</div>
         			</div>
         		</div>
@@ -197,12 +200,12 @@
 						
 						<div class="form-group col-lg-12">
 							<select class="product_select" name="quantity" required >
-								<option data-display=".5kg (₹329) Quantity" value=".5kg (₹ 329) (+60 Drlivery)marblecake">.5kg (₹329) (+60 Delivery charge)</option>
-								<option value="1kg (₹799 )marblecake ">1kg (₹799) (Free Delivery)</option>
-								<option value="1.5kg (₹1129) marblecake">1.5kg (₹1129) (Free Delivery)</option>
-								<option value="2kg (₹1549 ) marblecake">2kg (₹1549) (Free Delivery)</option>
-								<option value="2.5kg (₹1799 ) marblecake">2.5kg (₹1799) (Free Delivery)</option>
-   								<option value="3kg (₹2299 ) marblecake">3kg (₹2299) (Free Delivery)</option>
+								<option data-display=".5kg (₹399) Quantity" value=".5kg (₹ 399) marblecake">.5kg (₹399) (Free Delivery)</option>
+								<option value="1kg (₹749 )marblecake ">1kg (₹749) (Free Delivery)</option>
+								<option value="1.5kg (₹1099) marblecake">1.5kg (₹1099) (Free Delivery)</option>
+								<option value="2kg (₹1499 ) marblecake">2kg (₹1499) (Free Delivery)</option>
+								<option value="2.5kg (₹1829 ) marblecake">2.5kg (₹1829) (Free Delivery)</option>
+   								<option value="3kg (₹2159 ) marblecake">3kg (₹2159) (Free Delivery)</option>
 							</select>
 						</div>	
 						
@@ -220,7 +223,7 @@
 							<textarea class="form-control" name="message" id="message" rows="message" placeholder="Message on Cake   (Maximum 45 characters !)" maxlength="45" ></textarea>
 						</div>
 						<div class="form-group col-lg-12">
-							<button type="submit" value="submit" class="btn order_s_btn form-control">Place Order</button>
+							<button type="submit" value="submit" class="btn order_s_btn form-control" id="submitBtn">Place Order</button>
 						</div>
 					</form>
         		</div>
@@ -236,25 +239,28 @@
 
 
 
-<script>
-	$("#submit-form").submit((e)=>{
-		e.preventDefault()
-		$.ajax({
-			url:"https://script.google.com/macros/s/AKfycbwXLDZFDdsNjxFRg_7EbyQ-9Qav7XYjfu-0ucwKYn6zY-HAqCKHjUW9wsE7kes-UBav9A/exec",
-			data:$("#submit-form").serialize(),
-			method:"post",
-			success:function (response){
-				alert("Your order placed successfully! You will get a Confirmation Call soon📞")
-				window.location.reload()
-				window.location.href="index.html"
-			},
-			error:function (err){
-				alert("Something Error")
-
-			}
-		})
-	})
-</script>	
+		<script>
+			$("#submit-form").submit((e)=>{
+				e.preventDefault()
+				var spinner = '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>'
+				console.log("clicked");
+				$("#submitBtn").html(spinner);
+				$.ajax({
+					url:"https://script.google.com/macros/s/AKfycbwXLDZFDdsNjxFRg_7EbyQ-9Qav7XYjfu-0ucwKYn6zY-HAqCKHjUW9wsE7kes-UBav9A/exec",
+					data:$("#submit-form").serialize(),
+					method:"post",
+					success:function (response){
+						alert("Your order placed successfully! You will get a Confirmation Call soon📞")
+						window.location.reload()
+						window.location.href="index.html"
+					},
+					error:function (err){
+						alert("Something Error")
+		
+					}
+				})
+			})
+		</script>	
 
 
    

@@ -130,13 +130,16 @@
 								Shape – Round <br>
 								
 								Serves – 4-6 people (0.5kg)</p>
-        					<h5>Price :<span>₹529</span></h5>
+								Free Home Delivery*
+								<h5 style="color: gray;"> Price : <del>₹649</del><span style="color: black;"> ₹549 </span> (16% off)</h5>
         					
 							
 							<div class="quantity_box">
         						<p>Please Note: <br> This image is only for representation purpose <br> This cake is hand delivered in a good quality cardboard box</p>
         					</div>
+							<center>
         					<a class="pink_more" href="#order-now">Order Now</a>
+						    </center>
         				</div>
         			</div>
         		</div>
@@ -197,12 +200,12 @@
 						
 						<div class="form-group col-lg-12">
 							<select class="product_select" name="quantity" required >
-								<option data-display=".5kg (₹529) Quantity" value=".5kg (₹529 ) (+60 Drlivery)tendercoconut">.5kg (₹529) (+60 Delivery charge)</option>
-								<option value="1kg (₹849) tendercoconut">1kg (₹849) (Free Delivery)</option>
-								<option value="1.5kg (₹ 1379) tendercoconut">1.5kg (₹1379) (Free Delivery)</option>
-								<option value="2kg (₹ 1649)tendercoconut ">2kg (₹ 1649 (Free Delivery)</option>
-								<option value="2.5kg (₹ 2099) tendercoconut">2.5kg (₹2099) (Free Delivery)</option>
-   								<option value="3kg (₹ 2449)tendercoconut ">3kg (₹2449) (Free Delivery)</option>
+								<option data-display=".5kg (₹549) Quantity" value=".5kg (₹549 )tendercoconut">.5kg (₹549) (Free Delivery)</option>
+								<option value="1kg (₹949) tendercoconut">1kg (₹949) (Free Delivery)</option>
+								<option value="1.5kg (₹ 1459) tendercoconut">1.5kg (₹1459) (Free Delivery)</option>
+								<option value="2kg (₹ 1899)tendercoconut ">2kg (₹ 1899 (Free Delivery)</option>
+								<option value="2.5kg (₹ 2329) tendercoconut">2.5kg (₹2329) (Free Delivery)</option>
+   								<option value="3kg (₹ 2749)tendercoconut ">3kg (₹2749) (Free Delivery)</option>
 							</select>
 						</div>	
 						
@@ -220,7 +223,7 @@
 							<textarea class="form-control" name="message" id="message" rows="message" placeholder="Message on Cake   (Maximum 45 characters !)" maxlength="45" ></textarea>
 						</div>
 						<div class="form-group col-lg-12">
-							<button type="submit" value="submit" class="btn order_s_btn form-control">Place Order</button>
+							<button type="submit" value="submit" class="btn order_s_btn form-control" id="submitBtn">Place Order</button>
 						</div>
 					</form>
         		</div>
@@ -236,25 +239,28 @@
 
 
 
-<script>
-	$("#submit-form").submit((e)=>{
-		e.preventDefault()
-		$.ajax({
-			url:"https://script.google.com/macros/s/AKfycbwXLDZFDdsNjxFRg_7EbyQ-9Qav7XYjfu-0ucwKYn6zY-HAqCKHjUW9wsE7kes-UBav9A/exec",
-			data:$("#submit-form").serialize(),
-			method:"post",
-			success:function (response){
-				alert("Your order placed successfully! You will get a Confirmation Call soon📞")
-				window.location.reload()
-				window.location.href="index.html"
-			},
-			error:function (err){
-				alert("Something Error")
-
-			}
-		})
-	})
-</script>	
+		<script>
+			$("#submit-form").submit((e)=>{
+				e.preventDefault()
+				var spinner = '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>'
+				console.log("clicked");
+				$("#submitBtn").html(spinner);
+				$.ajax({
+					url:"https://script.google.com/macros/s/AKfycbwXLDZFDdsNjxFRg_7EbyQ-9Qav7XYjfu-0ucwKYn6zY-HAqCKHjUW9wsE7kes-UBav9A/exec",
+					data:$("#submit-form").serialize(),
+					method:"post",
+					success:function (response){
+						alert("Your order placed successfully! You will get a Confirmation Call soon📞")
+						window.location.reload()
+						window.location.href="index.html"
+					},
+					error:function (err){
+						alert("Something Error")
+		
+					}
+				})
+			})
+		</script>	
 
 
    

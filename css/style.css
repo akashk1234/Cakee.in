@@ -1518,7 +1518,7 @@ i:before {
 }
 
 .pest_btn {
-  background: #94c9d9;
+  background: #2abdea;
   color: #fff;
   line-height: 36px;
   display: inline-block;
@@ -1648,7 +1648,7 @@ i:before {
 }
 
 .order_s_btn {
-  background: #94c9d9;
+  background: #34aeff;
   color: #fff;
   line-height: 50px;
   display: inline-block;
@@ -1700,7 +1700,7 @@ i:before {
 }
 
 .pink_more {
-  background: #f195b2;
+  background: #ec638e;
   color: #fff;
   line-height: 42px;
   display: inline-block;
@@ -1711,6 +1711,7 @@ i:before {
   font-size: 14px;
   font-weight: 600;
   border-radius: 3px;
+  
 }
 
 .pink_more:before {
@@ -2086,7 +2087,7 @@ i:before {
 }
 
 .pink_cake_feature {
-  background: #f195b2;
+  background: #f17fa3;
 }
 
 .pink_cake_feature:before {
@@ -4413,6 +4414,7 @@ i:before {
 }
 
 .order_now_form .form-group .product_select .current {
+  content: "\e669";
   line-height: 45px;
 }
 
@@ -5345,6 +5347,7 @@ i:before {
 }
 
 .product_task_bar .product_task_inner .float-right .short .current {
+  content: "\e669";
   color: #797979;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
@@ -6154,6 +6157,7 @@ i:before {
 }
 
 .billing_form .form-group .product_select .current {
+  content: "\e669";
   position: relative;
   top: -3px;
   color: #c6c6c6;

@@ -122,7 +122,7 @@
         			<div class="col-lg-6">
         				<div class="product_details_text">
         					
-							<h4>Valentine's Day Special Mini Cake</h4>
+							<h4>Special Mini Cake</h4>
         					<p>Cake flavour –<br>
 
 								Type of cake – Cream <br>
@@ -132,13 +132,14 @@
 							Specially Made For Couples <br><br>
                             
                             Free Home Delivery*
-        					<h5 style="color: gray;"> Price : <del>₹299</del><span style="color: black;"> ₹229 </span> (24% off)</h5>
+        					<h5 style="color: gray;"> Price : <del>₹299</del><span style="color: black;"> ₹249 </span> (17% off)</h5>
         					
 							
 							<div class="quantity_box">
         						<p>Please Note: <br> This image is only for representation purpose <br> This cake is hand delivered in a good quality cardboard box</p>
         					</div>
-        					<a class="pink_more" href="#order-now">Order Now</a>
+							<center>
+        					<a class="pink_more" href="#order-now">Order Now</a></center>
         				</div>
         			</div>
         		</div>
@@ -199,9 +200,11 @@
 						
 						<div class="form-group col-lg-12">
 							<select class="product_select" name="quantity" required >
-								<option data-display="Quantity  1" value="1(₹229)">1 (₹229)</option>
-								<option value="2 ₹458">2 (₹458)</option>
-								<option value="3 ₹687">3 (₹687)</option>
+								<option data-display="Quantity  1" value="1(₹229)">1 piece ₹249 (17% off) (Free Delivery)</option>
+								<option value="2 ₹458">2 piece ₹479 (20% off)</option>
+								<option value="3 ₹687">3 piece ₹649 (25% off)</option>
+								<option value="3 ₹687">4 piece ₹699 (36% off)</option>
+								<option value="3 ₹687">5 piece ₹749 (50% off)</option>
 								
 								
 							</select>
@@ -219,7 +222,7 @@
 						
 						
 						<div class="form-group col-lg-12">
-							<button type="submit" value="submit" class="btn order_s_btn form-control">Place Order</button>
+							<button type="submit" value="submit" class="btn order_s_btn form-control" id="submitBtn">Place Order</button>
 						</div>
 					</form>
         		</div>
@@ -235,25 +238,28 @@
 
 
 
-<script>
-	$("#submit-form").submit((e)=>{
-		e.preventDefault()
-		$.ajax({
-			url:"https://script.google.com/macros/s/AKfycbwXLDZFDdsNjxFRg_7EbyQ-9Qav7XYjfu-0ucwKYn6zY-HAqCKHjUW9wsE7kes-UBav9A/exec",
-			data:$("#submit-form").serialize(),
-			method:"post",
-			success:function (response){
-				alert("Your order placed successfully! You will get a Confirmation Call soon📞")
-				window.location.reload()
-				window.location.href="index.html"
-			},
-			error:function (err){
-				alert("Something Error")
-
-			}
-		})
-	})
-</script>	
+		<script>
+			$("#submit-form").submit((e)=>{
+				e.preventDefault()
+				var spinner = '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>'
+				console.log("clicked");
+				$("#submitBtn").html(spinner);
+				$.ajax({
+					url:"https://script.google.com/macros/s/AKfycbwXLDZFDdsNjxFRg_7EbyQ-9Qav7XYjfu-0ucwKYn6zY-HAqCKHjUW9wsE7kes-UBav9A/exec",
+					data:$("#submit-form").serialize(),
+					method:"post",
+					success:function (response){
+						alert("Your order placed successfully! You will get a Confirmation Call soon📞")
+						window.location.reload()
+						window.location.href="index.html"
+					},
+					error:function (err){
+						alert("Something Error")
+		
+					}
+				})
+			})
+		</script>	
 
 
    
