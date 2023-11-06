@@ -176,7 +176,7 @@
 							<input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
 						</div>
 						<div class="form-group col-lg-6">
-							<select  class="product_select" name="locality" required >
+							<select  class="product_select" name="locality" id="locality" required >
 								<option data-display="Locality">LOCALITY</option>
 								<option value="Anakkulam">Anakkulam</option>
 								<option value="Arangadath">Arangadath</option>
@@ -200,7 +200,7 @@
 						
 						
 						<div class="form-group col-lg-12">
-							<select class="product_select" name="quantity" required >
+							<select class="product_select" name="quantity" id="quantity" required >
 								<option data-display=".5kg (₹ 359) Quantity" value=".5kg (₹359 ) blackforest">.5kg (₹359 ) (Free Delivery)</option>
 								<option value="1kg (₹579 ) black forest">1kg (₹579 ) (Free Delivery)</option>
 								<option value="1.5kg (₹899 )black forest ">1.5kg (₹899 ) (Free Delivery)</option>
@@ -224,7 +224,7 @@
 							<textarea class="form-control" name="message" id="message" rows="message" placeholder="Message on Cake   (Maximum 45 characters !)" maxlength="45" ></textarea>
 						</div>
 						<div class="form-group col-lg-12">
-							<button type="submit" value="submit" class="btn order_s_btn form-control" id="submitBtn">Place Order</button>
+							<button type="button" onclick=whatsApp(); value="submit" class="btn order_s_btn form-control" id="submitBtn">Place Order</button>
 						</div>
 					</form>
         		</div>
@@ -242,26 +242,29 @@
 
 
 		<script>
-			$("#submit-form").submit((e)=>{
-				e.preventDefault()
-				var spinner = '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>'
-				console.log("clicked");
-				$("#submitBtn").html(spinner);
-				$.ajax({
-					url:"https://script.google.com/macros/s/AKfycbzDsGB3HfkvcslgCzo_dhSb1m6Yp-BdCmfzFkaLloA-eESqmffXPYkUVsSheW5lCiB1/exec",
-					data:$("#submit-form").serialize(),
-					method:"post",
-					success:function (response){
-						alert("Your order placed successfully! You will get a Confirmation Call soon📞")
-						window.location.reload()
-						window.location.href="index.html"
-					},
-					error:function (err){
-						alert("Something Error")
-		
-					}
-				})
-			})
+			function whatsApp(){
+				var name = document.getElementById("name").value;
+				var phone = document.getElementById("phone").value;
+				var address = document.getElementById("address").value;
+				var locality= document.getElementById("locality").value;
+				var quantity = document.getElementById("quantity").value;
+				var date = document.getElementById("datetimepicker3").value;
+				var time = document.getElementById("datetimepicker4").value;
+				var message = document.getElementById("message").value;
+
+				var url = "https://wa.me/+918075353860?text="
+					+"*Name :* "+name+"%0a"
+					+"*Phone :* "+phone+"%0a"
+					+"*Address :* "+address+"%0a"
+					+"*Locality :* "+locality+"%0a"
+					+"*Quantity :* "+quantity+"%0a"
+					+"*date :* "+date+"%0a"
+					+"*time :* "+time+"%0a"
+					+"*message :* "+message+"%0a"
+
+					window.open(url,'_blank').focus();
+					
+			}
 		</script>	
 
 
